@@ -17,6 +17,15 @@ class Store:
     def update_price(self, item_name, new_price):
         if item_name in self.items:
             self.items[item_name] = new_price
+        else:
+            print("Нет продуктов с таким названием")
+
+    def info(self):
+        print(f"Название магазина: {self.name}")
+        print(f"Адрес магазина: {self.address}")
+        print(f"Список продуктов:")
+        for item, price in self.items.items():
+            print(f"{item}: {price}")
 
 # Создаем объекты класса Store
 store1 = Store("Магазин Фруктов", "ул. Первомайская, 10")
@@ -30,3 +39,4 @@ store2.add_item("огурцы", 0.8)
 store3 = Store("Домашний Магазин", "ул. Садовая, 5")
 store3.add_item("молоко", 1.2)
 store3.add_item("хлеб", 0.6)
+
